@@ -1,0 +1,241 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.dashboard {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #2c3e50;
+    height: 100vh;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #34495e;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Styles for the theme toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body.dark-mode .sidebar {
+    background-color: #333;
+}
+
+body.dark-mode .sidebar li:hover {
+    background-color: #444;
+}
+
+body.dark-mode .search-bar {
+    background-color: #444;
+    border: 1px solid #555;
+    color: #fff;
+}
+/* Styles for the user info section */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 16px;
+    color: #333;
+}
+
+.user-info i {
+    font-size: 30px;
+    color: #333;
+}
+
+.user-info .username {
+    font-size: 20px;
+}
+
+.user-info .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+#add-user-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+}
+
+#add-user-form input, #add-user-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#add-user-form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-user-form button:hover {
+    background-color: #45a049;
+}
+
+#add-user-form button[type="button"] {
+    background-color: #f44336;
+}
+
+#add-user-form button[type="button"]:hover {
+    background-color: #e53935;
+}
+
+#user-table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#user-table th, #user-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#user-table th {
+    background-color: #f4f4f4;
+}
+
+#user-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #f44336;
+    color: white;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #e53935;
+}
+
+/* Login Form */
+/* Global Styles */
+
+.sidebar ul li:last-child {
+    margin-top: auto;  /* Placer Logout en bas */
+    font-weight: bold;
+    color: red;  /* Couleur rouge pour attirer l'attention */
+}
+/* Par défaut, le sous-menu est caché */
+.sidebar ul li ul {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+/* Afficher le sous-menu quand il est actif */
+.sidebar ul li ul li {
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover ul {
+    display: block;
+}

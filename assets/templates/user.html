@@ -1,0 +1,47 @@
+<h2>User Management</h2>
+
+<!-- Bouton "Add User" -->
+<button onclick="showAddUserForm()">Add User</button>
+
+<!-- Formulaire d'ajout d'utilisateur caché par défaut -->
+<div id="add-user-form" style="display: none;">
+    <h3>Add New User</h3>
+    <form onsubmit="addUser(event)">
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" name="full-name" required><br><br>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+            <option value="vendeur">Vendeur</option>
+            <option value="magasinier">Magasinier</option>
+        </select><br><br>
+
+        <button type="submit">Add User</button>
+        <button type="button" onclick="cancelAddUser()">Cancel</button>
+    </form>
+</div>
+
+<!-- Tableau des utilisateurs -->
+<table id="user-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Les utilisateurs seront ajoutés ici -->
+        <script>
+            document.addEventListener('DOMContentLoaded', loadExistingUsers);
+        </script>
+        
+    </tbody>
+</table>
